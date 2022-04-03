@@ -37,9 +37,9 @@ module.exports = {
       errors: true
     },
     proxy: {
-      '/admin/acl': {
-        target: 'http://39.98.123.211:8170',
-        pathRewrite: { '^/admin/acl': '/admin/acl' }
+      '/admin': {
+        target: 'http://39.98.123.211',
+        pathRewrite: { '^/admin': '/admin' }
       }
     }
   },

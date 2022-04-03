@@ -3,8 +3,8 @@
     <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
 
     <breadcrumb class="breadcrumb-container" />
-
     <div class="right-menu">
+      <span class="right-menu-item user-info">{{ name }}</span>
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
           <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
@@ -38,7 +38,8 @@ export default {
   computed: {
     ...mapGetters([
       'sidebar',
-      'avatar'
+      'avatar',
+      'name'
     ])
   },
   methods: {
@@ -82,7 +83,6 @@ export default {
     float: right;
     height: 100%;
     line-height: 50px;
-
     &:focus {
       outline: none;
     }
@@ -105,6 +105,11 @@ export default {
       }
     }
 
+    .user-info{
+      font-size: 14px;
+      margin:0 2px;
+      color:#444141
+    }
     .avatar-container {
       margin-right: 30px;
 
